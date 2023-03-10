@@ -1,4 +1,5 @@
 
 {
-    "python.defaultInterpreterPath": "/home/aarsh/DJI/.venv/bin/python3",
+    "python.defaultInterpreterPath": "C:\\Users\\Aarsh Thakker\\Desktop\\robomaster_ws\\.venv\\bin\\python.exe",
+    "cmake.configureOnOpen": false,
 }
