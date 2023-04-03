@@ -14,11 +14,14 @@
 # limitations under the License.
 
 from multi_robomaster import multi_robot
+from robomaster import config
 
 
 if __name__ == '__main__':
 
     multi_drone = multi_robot.MultiDrone()
+    # Change the IP address to computer's IP on connected router network
+    config.LOCAL_IP_STR = "192.168.174.152"
     # change the robot_num that you want to scan
     multi_drone.initialize(robot_num=2)
     drone_ip_list = multi_drone._get_sn(timeout=10)

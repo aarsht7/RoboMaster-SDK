@@ -97,7 +97,7 @@ def get_subnets():
     for myiface in ifaces:
         addrs = netifaces.ifaddresses(myiface)
 
-        if socket.AF_INET not in addrs:
+        if socket.AF_INET not in addrs or myiface=='lo':
             continue
         # Get ipv4 stuff
         ipinfo = addrs[socket.AF_INET][0]
@@ -181,6 +181,8 @@ class TelloConnection(object):
 
     def start(self):
         try:
+            if config.LOCAL_IP_STR is not None:
+                self.local_ip = conn.get_local_ip()
             local_addr = (self.local_ip, self.local_port)
             self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # socket for sending cmd
             self._sock.bind(local_addr)

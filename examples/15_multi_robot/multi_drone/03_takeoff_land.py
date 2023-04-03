@@ -15,6 +15,7 @@
 
 
 from multi_robomaster import multi_robot
+from robomaster import config
 
 
 def takeoff_land_task1(robot_group):
@@ -34,6 +35,8 @@ if __name__ == '__main__':
 
     robot_sn_list = ["0TQZH79ED00H56", "0TQZH79ED00H89"]
     multi_drone = multi_robot.MultiDrone()
+    # Change the IP address to computer's IP on connected router network
+    config.LOCAL_IP_STR = "192.168.174.152"
     multi_drone.initialize(robot_num=2)
     multi_drone.number_id_by_sn([0, robot_sn_list[0]], [1, robot_sn_list[1]])
     multi_drone_group1 = multi_drone.build_group([0])
