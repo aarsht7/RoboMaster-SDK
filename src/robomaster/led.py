@@ -206,8 +206,9 @@ class TelloLed(object):
                     if proto.resp == "led ok":
                         return True
                     else:
-                        logger.warning("Drone: set ext led failed, resp {0}".format(proto.resp))
-            logger.error("Drone: set ext led failed")
+                        pass
+                        #logger.warning("Drone: set ext led failed, resp {0}".format(proto.resp))
+                #logger.error("Drone: set ext led failed")
             return False
         except Exception as e:
             logger.error("Drone: set ext led, send_sync_msg exception {0}".format(str(e)))

@@ -19,6 +19,7 @@ from robomaster import robot
 
 
 if __name__ == '__main__':
+    robomaster.config.LOCAL_IP_STR = "192.168.10.2"
     tl_drone = robot.Drone()
     tl_drone.initialize()
 
